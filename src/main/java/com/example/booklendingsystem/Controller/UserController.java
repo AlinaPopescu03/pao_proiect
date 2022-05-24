@@ -49,6 +49,15 @@ public class UserController {
         return ResponseEntity.noContent().build();
     }
 
+    @GetMapping("/UserbyUsername/{username}")
+    public ResponseEntity<Users> findUserByUsername(@PathVariable String username){
+        var user = userService.getUserbyUsername(username);
+        if ( user.isPresent()){
+            return ResponseEntity.of(user);
+        }
+        return ResponseEntity.noContent().build();
+    }
+
 
 //    @PutMapping("/updateUser")
 //    public Users updateUsers(@RequestBody Users user){

@@ -12,28 +12,17 @@ import javax.persistence.Table;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
 @Setter
+@Getter
 @Entity
-@Table(name = "books")
-public non-sealed class Books extends GenericEntity {
-
-    private String name;
-    private String author;
-    private int year;
-    private Boolean availability;
+@Table(name = "book_partener")
+public non-sealed class BookPartener extends GenericEntity {
 
     @OneToOne
-    @JoinColumn(name="id")
-    private Category category;
+    @JoinColumn(name="books", nullable=false)
+    private Books book;
 
     @OneToOne
-    @JoinColumn(name="id")
+    @JoinColumn(name="parteners", nullable=false)
     private Parteners partener;
-
-    @OneToOne
-    @JoinColumn(name="id")
-    private Prizes prize;
-
 }
-

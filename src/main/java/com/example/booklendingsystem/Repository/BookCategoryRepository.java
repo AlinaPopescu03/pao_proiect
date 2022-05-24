@@ -1,7 +1,7 @@
 package com.example.booklendingsystem.Repository;
 
+import com.example.booklendingsystem.Model.BookCategory;
 import com.example.booklendingsystem.Model.Books;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -9,11 +9,7 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface BookRepository extends JpaRepository<Books, Integer> {
-
-//    @Query("select book from Books book where book.name=:name")
-//    Optional<Books> findBookByName(String name);
-
-    Optional<Books> findByName(String name);
+public interface BookCategoryRepository extends JpaRepository<BookCategory, Integer> {
+    @Query("select book from BookCategory book where book.id=:id")
+    Optional<BookCategory> findBookCategory(int id);
 }
-

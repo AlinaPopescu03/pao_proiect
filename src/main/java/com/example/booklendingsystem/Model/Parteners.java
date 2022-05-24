@@ -14,7 +14,9 @@ import javax.persistence.Table;
 @Setter
 @Entity
 @Table(name = "parteners")
-public non-sealed class Parteners extends GenericEntity{
+
+public non-sealed class Parteners extends GenericEntity {
+
     private String name;
     private String email;
     private String phoneNumber;

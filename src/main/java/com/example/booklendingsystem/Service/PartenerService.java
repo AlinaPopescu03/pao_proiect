@@ -3,6 +3,7 @@ package com.example.booklendingsystem.Service;
 
 import com.example.booklendingsystem.Model.Parteners;
 import com.example.booklendingsystem.Repository.PartenerRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,10 +11,11 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
+@RequiredArgsConstructor
 public class PartenerService {
 
-    @Autowired
-    private PartenerRepository partenerRepository;
+
+    private final PartenerRepository partenerRepository;
 
     public void savePartener(Parteners partener){
         partenerRepository.save(partener);

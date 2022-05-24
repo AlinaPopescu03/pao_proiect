@@ -33,7 +33,7 @@ public class BookService {
     }
 
     public Optional<Books> getBookbyName(String name){
-        return bookRepository.findBookByName(name);
+        return bookRepository.findByName(name);
     }
 
     public String deleteBook(int id){

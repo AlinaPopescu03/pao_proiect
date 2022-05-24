@@ -11,12 +11,13 @@ import java.util.List;
 
 @AllArgsConstructor
 @RestController
+@RequestMapping("/partener")
 public class PartenerController {
 
 
     public final PartenerService partenerService;
 
-    @PostMapping("/addPartener")
+    @PostMapping("/add")
     public void addPartener(@RequestBody Parteners partener){
         partenerService.savePartener(partener);
 

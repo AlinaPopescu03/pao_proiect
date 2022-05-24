@@ -34,6 +34,10 @@ public class UserService {
         return userRepository.findUserBy(fname, lname);
     }
 
+    public Optional<Users> getUserbyUsername(String username){
+        return userRepository.findUserByUsername(username);
+    }
+
     public String deleteUser(int id){
         userRepository.deleteById(id);
         return " Usersul cu id-ul " + id + " nu mai exista in aplicatie!";
