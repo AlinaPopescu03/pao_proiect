@@ -12,31 +12,31 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/category")
+@RequestMapping("/cat/")
 
 public class CategoryController {
 
     private final CategoryService categoryService;
 
-    @PostMapping("/add")
+    @PostMapping("/category")
     public void addCategory(@RequestBody Category category){
         categoryService.save(category);
 
     }
 
-    @PostMapping("/adds")
+    @PostMapping("/categories")
     public void addCategories(@RequestBody List<Category> categories){
         categoryService.saveCategories(categories);
 
     }
 
-    @GetMapping("/listCategories")
+    @GetMapping("/lcategories")
     public List<Category> findAllCategories(){
         return categoryService.getCategories();
     }
 
 
-    @GetMapping("/BookById/{id}")
+    @GetMapping("/categorieById/{id}")
     public Category findCategorybyId(@PathVariable int id){
         return categoryService.getCategoryById(id);
     }

@@ -11,24 +11,25 @@ import java.util.List;
 
 @AllArgsConstructor
 @RestController
+@RequestMapping("/user")
 public class UserController {
 
 
     public final UserService userService;
 
-    @PostMapping("/addUser")
+    @PostMapping("/user")
     public void addUser(@RequestBody Users user){
         userService.saveUser(user);
 
     }
 
-    @PostMapping("/addUsers")
+    @PostMapping("/users")
     public List<Users> addUsers(@RequestBody List<Users> users){
         return userService.saveUsers(users);
 
     }
 
-    @GetMapping("/listUsers")
+    @GetMapping("/lusers")
     public List<Users> findAllUsers(){
         return userService.getUsers();
     }
@@ -58,12 +59,6 @@ public class UserController {
         return ResponseEntity.noContent().build();
     }
 
-
-//    @PutMapping("/updateUser")
-//    public Users updateUsers(@RequestBody Users user){
-//        return userService.updateUser(user);
-//
-//    }
 
     @DeleteMapping("/deleteUser/{id}")
     public String deleteUser(@PathVariable int id){

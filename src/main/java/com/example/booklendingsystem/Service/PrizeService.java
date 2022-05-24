@@ -22,24 +22,24 @@ public class PrizeService {
         prizeRepository.save(prize);
     }
 
-//    public void saveBooks(List<Books> books){
-//        bookRepository.saveAll(books);
-//    }
-//
+    public void savePrizes(List<Prizes> prizes){
+        prizeRepository.saveAll(prizes);
+    }
+
     public List<Prizes> getPrizes(){
         return prizeRepository.findAll();
     }
-//
-//    public Books getBookbyId(int id){
-//        return bookRepository.findById(id).orElse(null);
-//    }
-//
-//    public Optional<Books> getBookbyName(String name){
-//        return bookRepository.findByName(name);
-//    }
-//
-//    public String deleteBook(int id){
-//        bookRepository.deleteById(id);
-//        return " Cartea cu id-ul " + id + " nu mai exista in aplicatie!";
-//    }
+
+    public Prizes getPrizeById(int id){
+        return prizeRepository.findById(id).orElse(null);
+    }
+
+    public Optional<Prizes> getPrizebyName(String name){
+        return prizeRepository.findPrizeByName(name);
+    }
+
+    public String deletePrize(int id){
+        prizeRepository.deleteById(id);
+        return " Premiul cu id-ul " + id + " nu mai exista in aplicatie!";
+    }
 }

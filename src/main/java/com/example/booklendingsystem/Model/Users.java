@@ -5,8 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -22,6 +22,10 @@ public non-sealed class Users extends GenericEntity {
     private String phoneNumber;
     private String username;
     private String password;
-    private Role role;
+//    private Role role;
+
+    @OneToOne
+    @JoinColumn(name="id")
+    private Books book;
 
 }

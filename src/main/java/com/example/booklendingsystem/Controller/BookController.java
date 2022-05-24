@@ -15,19 +15,19 @@ public class BookController {
 
    public final  BookService bookService;
 
-    @PostMapping("/addBook")
+    @PostMapping("/boook")
     public void addBook(@RequestBody Books book){
         bookService.saveBook(book);
 
     }
 
-    @PostMapping("/addBooks")
+    @PostMapping("/books")
     public void addBooks(@RequestBody List<Books> books){
         bookService.saveBooks(books);
 
     }
 
-    @GetMapping("/listBooks")
+    @GetMapping("/lbooks")
     public List<Books> findAllBooks(){
         return bookService.getBooks();
     }
@@ -55,7 +55,7 @@ public class BookController {
 //
 //    }
 
-    @DeleteMapping("/deleteBook/{id}")
+    @DeleteMapping("/dbook/{id}")
     public String deleteBook(@PathVariable int id){
         return bookService.deleteBook(id);
     }

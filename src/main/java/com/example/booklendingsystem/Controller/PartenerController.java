@@ -11,25 +11,24 @@ import java.util.List;
 
 @AllArgsConstructor
 @RestController
-@RequestMapping("/partener")
 public class PartenerController {
 
 
     public final PartenerService partenerService;
 
-    @PostMapping("/add")
+    @PostMapping("/partener")
     public void addPartener(@RequestBody Parteners partener){
         partenerService.savePartener(partener);
 
     }
 
-    @PostMapping("/addParteners")
+    @PostMapping("/parteners")
     public void addParteners(@RequestBody List<Parteners> parteners){
          partenerService.saveParteners(parteners);
 
     }
 
-    @GetMapping("/listParteners")
+    @GetMapping("/lParteners")
     public List<Parteners> findAllParteners(){
         return partenerService.getParteners();
     }
@@ -40,10 +39,6 @@ public class PartenerController {
         return partenerService.getPartenersById(id);
     }
 
-//    @GetMapping("/byName/{name}")
-//    public Parteners findPartenersByName(@PathVariable String name){
-//        return partenerService.getParterbyName(name);
-//    }
 
     @GetMapping("/PartenerbyName/{name}")
     public ResponseEntity<Parteners> findPartenerByName(@PathVariable String name){
@@ -55,13 +50,7 @@ public class PartenerController {
     }
 
 
-//    @PutMapping("/updatePartener")
-//    public Parteners updatePartener(@RequestBody Parteners partener){
-//        return partenerService.updatePartener(partener);
-//
-//    }
-
-    @DeleteMapping("/deletePartener/{id}")
+    @DeleteMapping("/dPartener/{id}")
     public String deletePartener(@PathVariable int id){
         return partenerService.deletePartener(id);
     }

@@ -17,49 +17,42 @@ public class PrizeController {
 
     public final PrizeService prizeService;
 
-    @PostMapping("/add")
+    @PostMapping("/prize")
     public void addPrize(@RequestBody Prizes prize){
         prizeService.savePrize(prize);
 
     }
 
-//    @PostMapping("/addBooks")
-//    public void addBooks(@RequestBody List<Books> books){
-//        bookService.saveBooks(books);
-//
-//    }
+    @PostMapping("/prizes")
+    public void addPrizes(@RequestBody List<Prizes> prizes){
+        prizeService.savePrizes(prizes);
 
-    @GetMapping("/listPrizes")
+    }
+
+    @GetMapping("/lprizes")
     public List<Prizes> findAllPrizes(){
         return prizeService.getPrizes();
     }
 
 
-//    @GetMapping("/BookById/{id}")
-//    public Books findBookbyId(@PathVariable int id){
-//        return bookService.getBookbyId(id);
-//    }
-//
-//
-//    @GetMapping("/BookbyName/{name}")
-//    public ResponseEntity<Books> findBookByName(@PathVariable String name){
-//        var book = bookService.getBookbyName(name);
-//        if ( book.isPresent()){
-//            return ResponseEntity.of(book);
-//        }
-//        return ResponseEntity.noContent().build();
-//    }
+    @GetMapping("/byId/{id}")
+    public Prizes findPrizeById(@PathVariable int id){
+        return prizeService.getPrizeById(id);
+    }
 
-//
-//    @PutMapping("/updateBook")
-//    public Books updateProduct(@RequestBody Books book){
-//        return bookService.updateBook(book);
-//
-//    }
 
-//    @DeleteMapping("/deleteBook/{id}")
-//    public String deleteBook(@PathVariable int id){
-//        return bookService.deleteBook(id);
-//    }
+    @GetMapping("/byName/{name}")
+    public ResponseEntity<Prizes> findPrizeByName(@PathVariable String name){
+        var prize = prizeService.getPrizebyName(name);
+        if ( prize.isPresent()){
+            return ResponseEntity.of(prize);
+        }
+        return ResponseEntity.noContent().build();
+    }
+
+    @DeleteMapping("/dprize/{id}")
+    public String deletePrize(@PathVariable int id){
+        return prizeService.deletePrize(id);
+    }
 
 }
