@@ -48,12 +48,6 @@ public class BookController {
         return ResponseEntity.noContent().build();
     }
 
-//
-//    @PutMapping("/updateBook")
-//    public Books updateProduct(@RequestBody Books book){
-//        return bookService.updateBook(book);
-//
-//    }
 
     @DeleteMapping("/dbook/{id}")
     public String deleteBook(@PathVariable int id){

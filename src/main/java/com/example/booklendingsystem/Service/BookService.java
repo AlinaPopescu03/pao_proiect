@@ -33,21 +33,13 @@ public class BookService {
     }
 
     public Optional<Books> getBookbyName(String name){
-        return bookRepository.findByName(name);
+        return bookRepository.findBookByName(name);
     }
 
     public String deleteBook(int id){
         bookRepository.deleteById(id);
         return " Cartea cu id-ul " + id + " nu mai exista in aplicatie!";
     }
-
-//    public Books updateBook(Books book){
-//        Books existingBook = bookRepository.findById(book.getId()).orElse(null);
-//        existingBook.setName(book.getName());
-//        existingBook.setYear(book.getYear());
-//        existingBook.setStatus(book.getStatus());
-//        return bookRepository.save(existingBook);
-//    }
 
 
 }

@@ -22,7 +22,6 @@ public non-sealed class Users extends GenericEntity {
     private String phoneNumber;
     private String username;
     private String password;
-//    private Role role;
 
     @OneToOne
     @JoinColumn(name="id")
